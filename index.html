@@ -58,11 +58,21 @@
 		tooltipAnchor: [16, -28],
 	});
 	
+	var Bus = L.icon({
+		iconUrl:       'icons/Bus.png',
+		iconRetinaUrl: 'icons/Bus.png',
+		iconSize:    [30, 30],
+		iconAnchor:  [25, 30],
+		popupAnchor: [-10, -30],
+		tooltipAnchor: [16, -28],
+	});
+	
 	var el_crash1 = L.marker([-1.845384, 6.152344], {icon: Crash}).bindPopup('<b>Helicopter Crash,<br>weapons in a box.</b>'),
 		el_crash2 = L.marker([22.350076, 34.892578], {icon: Crash}).bindPopup('<b>Helicopter Crash,<br>weapons in a box.</b>'),
 		el_crash3 = L.marker([33.870416, -12.568359], {icon: Crash}).bindPopup('<b>Helicopter Crash,<br>weapons in a box.</b>'),
 		el_crash4 = L.marker([19.973349, -30.498047], {icon: Crash}).bindPopup('<b>Helicopter Crash,<br>weapons in a box.</b>'),
-		el_crash5 = L.marker([0.703107, -44.736328], {icon: Crash}).bindPopup('<b>Helicopter Crash,<br>weapons in a box.</b>');
+		el_crash5 = L.marker([0.703107, -44.736328], {icon: Crash}).bindPopup('<b>Helicopter Crash,<br>weapons in a box.</b>'),
+		el_crash6 = L.marker([54.72462, 32.167969], {icon: Crash}).bindPopup('<b>Helicopter Crash,<br>weapons in a box.</b>');
 	
 	var el_medic1 = L.marker([32, -16], {icon: Medic}).bindPopup('<b>First aid kit</b>');
 		el_medic2 = L.marker([38.479395, -48.427734], {icon: Medic}).bindPopup('<b>First aid kit</b>'),
@@ -70,11 +80,13 @@
 		el_medic4 = L.marker([44.964798, -19.863281], {icon: Medic}).bindPopup('<b>First aid kit</b>'),
 		el_medic5 = L.marker([49.95122, -23.994141], {icon: Medic}).bindPopup('<b>First aid kit</b>'),
 		el_medic6 = L.marker([-15, 22], {icon: Medic}).bindPopup('<b>First aid kit</b>');
-		el_medic7 = L.marker([4.302591, -27.861328], {icon: Medic}).bindPopup('<b>First aid kit</b>');
+		el_medic7 = L.marker([4.302591, -27.861328], {icon: Medic}).bindPopup('<b>First aid kit</b>'),
+		el_medic8 = L.marker([-25.244696, -12.65625], {icon: Medic}).bindPopup('<b>First aid kit</b>');
 	
 	var el_shop1 = L.marker([20, -28], {icon: Shop}).bindPopup('<b>Food, water</b>'),
 		el_shop2 = L.marker([-1.933227, 1.230469], {icon: Shop}).bindPopup('<b>Food, water</b>'),
-		el_shop3 = L.marker([-8.494105, -14.501953], {icon: Shop}).bindPopup('<b>Food, water</b>');
+		el_shop3 = L.marker([-8.494105, -14.501953], {icon: Shop}).bindPopup('<b>Food, water</b>'),
+		el_shop4 = L.marker([11.436955, -52.822266], {icon: Shop}).bindPopup('<b>Food, water</b>');
 	
 	var el_helicopter1 = L.marker([-10.882275, -6.091797], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
 		el_helicopter2 = L.marker([-18.812811, 15.941406], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
@@ -100,16 +112,30 @@
 		el_helicopter22 = L.marker([-28.22697, -14.0625], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
 		el_helicopter23 = L.marker([-47.694974, -26.542969], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
 		el_helicopter24 = L.marker([-51.399206, -29.091797], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>');
+		
+	var el_bus1 = L.marker([-5.441022, 8.4375], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
+		el_bus2 = L.marker([-11.953349, -10.810547], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
+		el_bus3 = L.marker([47.398349, -5.273438], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
+		el_bus4 = L.marker([59.712097, 40.693359], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
+		el_bus5 = L.marker([30.902225, -10.283203], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
+		el_bus6 = L.marker([-25.980829, 27.773438], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
+		el_bus7 = L.marker([-16.972741, -53.228516], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
+		el_bus8 = L.marker([2.547988, -67.148438], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
+		el_bus9 = L.marker([20.062118, -37.353516], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
+		el_bus10 = L.marker([-46.55886, -25.576172], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
+		el_bus11 = L.marker([55.875311, -34.332031], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>');
 	
-	var mg_crash_all = L.layerGroup([el_crash1,el_crash2,el_crash3,el_crash4,el_crash5]).addTo(map);
-	var mg_medic_all = L.layerGroup([el_medic1,el_medic2,el_medic3,el_medic4,el_medic5,el_medic6,el_medic7]).addTo(map);
-	var mg_shop_all = L.layerGroup([el_shop1,el_shop2,el_shop3]).addTo(map);
+	var mg_crash_all = L.layerGroup([el_crash1,el_crash2,el_crash3,el_crash4,el_crash5,el_crash6]).addTo(map);
+	var mg_medic_all = L.layerGroup([el_medic1,el_medic2,el_medic3,el_medic4,el_medic5,el_medic6,el_medic7,el_medic8]).addTo(map);
+	var mg_shop_all = L.layerGroup([el_shop1,el_shop2,el_shop3,el_shop4]).addTo(map);
 	var mg_helicopter_all = L.layerGroup([el_helicopter1,el_helicopter2,el_helicopter3,el_helicopter4,el_helicopter5,el_helicopter6,el_helicopter7,el_helicopter8,el_helicopter9,el_helicopter10,el_helicopter11,el_helicopter12,el_helicopter13,el_helicopter14,el_helicopter15,el_helicopter16,el_helicopter17,el_helicopter18,el_helicopter19,el_helicopter20,el_helicopter21,el_helicopter22,el_helicopter23,el_helicopter24]).addTo(map);
+	var mg_bus_all = L.layerGroup([el_bus1,el_bus2,el_bus3,el_bus4,el_bus5,el_bus6,el_bus7,el_bus8,el_bus9,el_bus10,el_bus11]).addTo(map);
 
 	var overlays={ 
 		"<img src='icons/Medic_menu.png' /> Medic" : mg_medic_all, 
 		"<img src='icons/Crash_menu.png' /> Crash" : mg_crash_all,
 		"<img src='icons/Shop_menu.png' /> Shop" : mg_shop_all,
+		"<img src='icons/Bus_menu.png' /> Bus" : mg_bus_all,
 		"<img src='icons/Helicopter_menu.png' /> Helipad" : mg_helicopter_all,
 		}
 
