@@ -106,7 +106,8 @@
 		el_shop6 = L.marker([49.61071, 0], {icon: Shop}).bindPopup('<b>Food, water</b>'),
 		el_shop7 = L.marker([21.453069, -4.21875], {icon: Shop}).bindPopup('<b>Food, water</b>'),
 		el_shop8 = L.marker([-13.068777, 37.177734], {icon: Shop}).bindPopup('<b>Food, water</b>'),
-		el_shop9 = L.marker([40.313043, -29.355469], {icon: Shop}).bindPopup('<b>Food, water</b>');
+		el_shop9 = L.marker([40.313043, -29.355469], {icon: Shop}).bindPopup('<b>Food, water</b>'),
+		el_shop10 = L.marker([-14.093957, -63.896484], {icon: Shop}).bindPopup('<b>Food, water</b>');
 	
 	var el_helicopter1 = L.marker([-10.882275, -6.091797], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
 		el_helicopter2 = L.marker([-18.812811, 15.941406], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
@@ -141,7 +142,12 @@
 		el_helicopter31 = L.marker([-23.80545, -49.394531], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
 		el_helicopter32 = L.marker([9.275622, 57.832031], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
 		el_helicopter33 = L.marker([-38.548165, -42.978516], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter34 = L.marker([-1.669686, -18.28125], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>');
+		el_helicopter34 = L.marker([-1.669686, -18.28125], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter35 = L.marker([-14.944785, 54.580078], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter36 = L.marker([-8.754795, 17.314453], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter37 = L.marker([12.983148, 50.800781], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter38 = L.marker([-13.496473, 23.027344], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter39 = L.marker([-36.456636, -19.511719], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>');
 		
 	var el_bus1 = L.marker([-5.441022, 8.4375], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
 		el_bus2 = L.marker([-11.953349, -10.810547], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
@@ -164,8 +170,8 @@
 	
 	var mg_crash_all = L.layerGroup([el_crash1,el_crash2,el_crash3,el_crash4,el_crash5,el_crash6,el_crash7,el_crash8,el_crash9]).addTo(map);
 	var mg_medic_all = L.layerGroup([el_medic1,el_medic2,el_medic3,el_medic4,el_medic5,el_medic6,el_medic7,el_medic8,el_medic9,el_medic10]).addTo(map);
-	var mg_shop_all = L.layerGroup([el_shop1,el_shop2,el_shop3,el_shop4,el_shop5,el_shop6,el_shop7,el_shop8,el_shop9]).addTo(map);
-	var mg_helicopter_all = L.layerGroup([el_helicopter1,el_helicopter2,el_helicopter3,el_helicopter4,el_helicopter5,el_helicopter6,el_helicopter7,el_helicopter8,el_helicopter9,el_helicopter10,el_helicopter11,el_helicopter12,el_helicopter13,el_helicopter14,el_helicopter15,el_helicopter16,el_helicopter17,el_helicopter18,el_helicopter19,el_helicopter20,el_helicopter21,el_helicopter22,el_helicopter23,el_helicopter24,el_helicopter25,el_helicopter26,el_helicopter27,el_helicopter28,el_helicopter29,el_helicopter30,el_helicopter31,el_helicopter32,el_helicopter33,el_helicopter34]).addTo(map);
+	var mg_shop_all = L.layerGroup([el_shop1,el_shop2,el_shop3,el_shop4,el_shop5,el_shop6,el_shop7,el_shop8,el_shop9,el_shop10]).addTo(map);
+	var mg_helicopter_all = L.layerGroup([el_helicopter1,el_helicopter2,el_helicopter3,el_helicopter4,el_helicopter5,el_helicopter6,el_helicopter7,el_helicopter8,el_helicopter9,el_helicopter10,el_helicopter11,el_helicopter12,el_helicopter13,el_helicopter14,el_helicopter15,el_helicopter16,el_helicopter17,el_helicopter18,el_helicopter19,el_helicopter20,el_helicopter21,el_helicopter22,el_helicopter23,el_helicopter24,el_helicopter25,el_helicopter26,el_helicopter27,el_helicopter28,el_helicopter29,el_helicopter30,el_helicopter31,el_helicopter32,el_helicopter33,el_helicopter34,el_helicopter35,el_helicopter36,el_helicopter37,el_helicopter38,el_helicopter39]).addTo(map);
 	var mg_bus_all = L.layerGroup([el_bus1,el_bus2,el_bus3,el_bus4,el_bus5,el_bus6,el_bus7,el_bus8,el_bus9,el_bus10,el_bus11,el_bus12,el_ambulance1,el_ambulance4,el_ambulance5,el_ambulance6,el_ambulance7]).addTo(map);
 
 	var overlays={ 
