@@ -1060,7 +1060,7 @@
 	var mg_medic_all = L.layerGroup([el_medic1,el_medic2,el_medic3,el_medic4,el_medic5,el_medic6,el_medic7,el_medic8,el_medic9,el_medic10]).addTo(map);
 	var mg_shop_all = L.layerGroup([el_shop1,el_shop2,el_shop3,el_shop4,el_shop5,el_shop6,el_shop7,el_shop8,el_shop9,el_shop10]).addTo(map);
 	var mg_helicopter_all = L.layerGroup([el_helicopter1,el_helicopter2,el_helicopter3,el_helicopter4,el_helicopter5,el_helicopter6,el_helicopter7,el_helicopter8,el_helicopter9,el_helicopter10,el_helicopter11,el_helicopter12,el_helicopter13,el_helicopter14,el_helicopter15,el_helicopter16,el_helicopter17,el_helicopter18,el_helicopter19,el_helicopter20,el_helicopter21,el_helicopter22,el_helicopter23,el_helicopter24,el_helicopter25,el_helicopter26,el_helicopter27,el_helicopter28,el_helicopter29,el_helicopter30,el_helicopter31,el_helicopter32,el_helicopter33,el_helicopter34,el_helicopter35,el_helicopter36,el_helicopter37,el_helicopter38,el_helicopter39,el_helicopter40,el_helicopter41]).addTo(map);
-	var mg_bus_all = L.layerGroup([el_bus1,el_bus2,el_bus3,el_bus4,el_bus5,el_bus6,el_bus7,el_bus8,el_bus9,el_bus10,el_bus11,el_bus12,el_ambulance1,el_ambulance4,el_ambulance5,el_ambulance6,el_ambulance7]).addTo(map);
+	var mg_bus_all = L.layerGroup([el_bus1,el_bus2,el_bus3,el_bus4,el_bus5,el_bus6,el_bus7,el_bus8,el_bus9,el_bus10,el_bus11,el_bus12,el_ambulance1,el_ambulance4,el_ambulance5,el_ambulance6,el_ambulance7]);
 	var mg_region_all = L.layerGroup([region1,region2,region3,region4,region5,region6,region7,region8,region9]);
 	var mg_buildings_all = L.layerGroup([buildings10,buildings11,buildings12,buildings13,buildings20,buildings21,buildings22,buildings30,buildings31,buildings32,buildings33,buildings34,buildings35,buildings40,buildings41,buildings42,buildings43,buildings44,buildings45,buildings46,buildings47,buildings48,buildings50,buildings51,buildings52,buildings53,buildings54,buildings55,buildings56,buildings600,buildings601,buildings602,buildings603,buildings604,buildings605,buildings606,buildings607,buildings608,buildings609,buildings610,buildings611,buildings612,buildings613,buildings614,buildings615,buildings616,buildings617,buildings700,buildings701,buildings702,buildings703,buildings704,buildings705,buildings706,buildings707,buildings708,buildings709,buildings710,buildings711,buildings712,buildings713,buildings714,buildings715,buildings800,buildings801,buildings802,buildings803,buildings804,buildings805,buildings806,buildings807,buildings808,buildings809,buildings810,buildings811]);
 
@@ -1069,9 +1069,9 @@
 		"<img src='icons/Crash_menu.png' /> Weapon" : mg_crash_all,
 		"<img src='icons/Shop_menu.png' /> Shop" : mg_shop_all,
 		"<img src='icons/Bus_menu.png' /> Bus" : mg_bus_all,
-		"<img src='icons/Helicopter_menu.png' /> Helipad" : mg_helicopter_all,
 		"<img src='icons/Region_menu.png' /> Region" : mg_region_all,
 		"<img src='icons/Buildings_menu.png' /> Buildings" : mg_buildings_all,
+		"<img src='icons/Helicopter_menu.png' /> Helipad" : mg_helicopter_all,
 		}
 
 	L.control.layers(null, overlays).addTo(map);
