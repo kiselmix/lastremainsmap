@@ -84,12 +84,20 @@
     <div id="map" style="width: 100%; height: 100%; background: #000000;"></div>
     <script type="text/javascript">
     var map = L.map('map').setView([0, 0], 0);
-    L.tileLayer('map/{z}/{x}/{y}.png', {
+	
+    var map1 = L.tileLayer('map1/{z}/{x}/{y}.png', {
       continuousWorld: false,
       noWrap: true,  
       minZoom: 3,
-      maxZoom: 4,
+      maxZoom: 5,
     }).addTo(map);
+	
+	var map2 = L.tileLayer('map2/{z}/{x}/{y}.png', {
+      continuousWorld: false,
+      noWrap: true,  
+      minZoom: 3,
+      maxZoom: 5,
+    });
 	
 	var Crash = L.icon({
 		iconUrl:       'icons/Crash.png',
@@ -122,7 +130,7 @@
 		iconUrl:       'icons/Helicopter.png',
 		iconRetinaUrl: 'icons/Helicopter.png',
 		iconSize:    [45, 45],
-		iconAnchor:  [30, 45],
+		iconAnchor:  [30, 35],
 		popupAnchor: [1, -38],
 		tooltipAnchor: [16, -28],
 	});
@@ -143,78 +151,6 @@
 		iconAnchor:  [25, 30],
 		popupAnchor: [-10, -30],
 		tooltipAnchor: [16, -28],
-	});
-
-	var region1 = L.polygon([[44.024422, -2.460938],[34.307144, -13.271484],[36.750898, -19.857317],[39.380847, -25.3049],[42.436588, -29.87384],[43.529999, -31.543261],[44.916098, -32.509767],[48.704946, -33.212681],[52.923205, -33.739866],[55.543016, -34.003459],[57.088515, -35.244141],[57.562995, -29.267578],[57.373938, -23.554687],[57.04073, -18.28125],[56.46249, -13.095703], [56.800878, -9.140625],[57.751076, -5.185547],[60.543775, 2.285156],[52.961875, 13.183594]],{
-		weight: 1,
-		opacity: 1,
-		color: 'white',
-		fillOpacity: 0.3,
-		fillColor: '#ed1b35'
-	});
-
-	var region2 = L.polygon([[60.543775, 2.285156],[52.961875, 13.183594],[54.927142, 18.720703],[55.429013, 21.005859],[55.776573, 23.730469],[55.37911, 26.015625],[55.128649, 27.333984],[54.521081, 31.201172],[55.229023, 33.574219],[56.511018, 35.595703],[58.077876, 37.529297],[61.058285, 39.902344],[68.073305, 16.259766],[64.052978, 8.789063]],{
-		weight: 1,
-		opacity: 1,
-		color: 'white',
-		fillOpacity: 0.3,
-		fillColor: '#44b85c'
-	});
-
-	var region3 = L.polygon([[-22.43134, 32.080078],[-17.978733, 37.001953],[-14.604847, 40.429688],[-12.811801, 42.011719],[-11.005904, 43.154297],[-9.449062, 43.857422],[-7.623887, 44.296875],[-4.039618, 44.824219],[8.754795, 46.40625],[19.808054, 48.427734],[27.215556, 50.449219],[39.164141, 53.789063],[45.02695, 55.283203],[49.267805, 55.722656],[53.904338, 55.810547],[50.513427, 59.414063],[46.920255, 61.347656],[42.163403, 62.314453],[28.921631, 62.753906],[24.686952, 63.193359],[22.105999, 64.160156],[18.39623, 70.488281],[10.141932, 74.619141],[2.986927, 77.34375],[-3.951941, 79.980469],[-10.574222, 81.474609],[-14.43468, 82.001953],[-18.479609, 81.386719],[-21.861499, 79.980469],[-24.126702, 77.519531],[-24.846565, 73.300781],[-24.046464, 65.742188],[-24.846565, 62.402344],[-26.980829, 59.0625],[-31.877558, 53.613281],[-33.358062, 50.800781],[-33.651208, 47.109375],[-32.175612, 41.220703],[-28.149503, 35.595703],[-23.966176, 32.519531]],{
-		weight: 1,
-		opacity: 1,
-		color: 'white',
-		fillOpacity: 0.3,
-		fillColor: '#00ff91'
-	});
-
-	var region4 = L.polygon([[10.919781, -68.906356],[7.193522, -72.246094],[3.686262, -73.826753],[-7.018959, -77.871094],[-15.378491, -79.977249],[-47.116575, -52.651472],[-50.14881, -34.101563],[-49.627373, -31.827648],[-47.633673, -28.564453],[-45.599703, -26.643658],[-42.287008, -25.224609],[-38.08084, -24.622781],[-32.457291, -24.960937],[-28.70406, -25.677152],[-26.015606, -26.455078],[-23.334103, -28.313079],[-19.238966, -32.354834],[-13.676305, -39.471837],[-6.321656, -50.279138],[-0.531534, -57.923326],[4.300232, -63.722366],[7.971241, -67.149071]],{
-		weight: 1,
-		opacity: 1,
-		color: 'white',
-		fillOpacity: 0.3,
-		fillColor: '#19c1f3'
-	});
-
-	var region5 = L.polygon([[34.307144, -13.271484],[36.750898, -19.857317],[39.380847, -25.3049],[42.436588, -29.87384],[43.529999, -31.543261],[44.916098, -32.509767],[48.704946, -33.212681],[52.923205, -33.739866],[55.543016, -34.003459],[57.088515, -35.244141],[56.002573, -38.320312],[54.396475, -39.375],[53.096245, -39.726563],[47.781866, -40.078125],[46.827603, -40.429688],[45.917319, -41.660156],[44.804938, -45.439453],[43.861246, -47.8125],[42.579385, -49.570312],[40.338545, -52.03125],[37.88202, -53.789063],[36.126116, -54.667969],[33.893096, -54.667969],[31.525102, -53.701172],[29.479094, -52.119141],[26.99977, -49.21875],[21.304771, -41.660156],[14.870864, -31.904297],[13.335405, -30.058594],[12.13432, -29.091797],[11.014146, -28.564453],[10.14954, -28.476562],[9.022081, -28.740234],[8.152377, -29.443359],[8.581417, -19.335938],[12.472078, -5.185547],[21.135069, -8.349609],[28.086149, -10.634766]],{
-		weight: 1,
-		opacity: 1,
-		color: 'white',
-		fillOpacity: 0.3,
-		fillColor: '#8e479c'
-	});
-
-	var region6 = L.polygon([[-38.08084, -24.622781],[-38.504168, -22.236328],[-40.137114, -18.457031],[-41.53452, -15.380859],[-42.254712, -13.447266],[-41.797347, -11.865234],[-39.935083, -9.228516],[-37.39446, -7.382813],[-34.330038, -6.943359],[-30.847893, -7.470703],[-26.607236, -9.667969],[-13.820804, 11.337891],[-11.762343, 10.371094],[-8.298388, 9.404297],[-5.329305, 8.613281],[-3.39995, 7.910156],[-1.670951, 5.976563],[0.967484, 3.251953],[4.393551, -0.615234],[7.629633, -3.164063],[10.409177, -4.482422],[12.472078, -5.185547],[8.581417, -19.335938],[8.152377, -29.443359],[7.01294, -30.849609],[6.936878, -32.255859],[9.797056, -35.507813],[11.353345, -37.529297],[12.901191, -42.011719],[13.671612, -47.197266],	[14.098546, -52.822266],	[14.098546, -56.074219],	[13.671612, -59.677734],	[12.558011, -64.072266],	[11.698079, -67.148438],[10.919781, -68.906356],[7.971241, -67.149071],[4.300232, -63.722366],[-0.531534, -57.923326],[-6.321656, -50.279138],[-13.676305, -39.471837],[-19.238966, -32.354834],[-23.334103, -28.313079],[-26.015606, -26.455078],[-28.70406, -25.677152],[-32.457291, -24.960937]],{
-		weight: 1,
-		opacity: 1,
-		color: 'white',
-		fillOpacity: 0.3,
-		fillColor: '#f58631'
-	});
-
-	var region7 = L.polygon([[-50.14881, -34.101563],[-49.627373, -31.827648],[-47.633673, -28.564453],[-45.599703, -26.643658],[-42.287008, -25.224609],[-38.08084, -24.622781],[-38.504168, -22.236328],[-40.137114, -18.457031],[-41.53452, -15.380859],[-42.254712, -13.447266],[-41.797347, -11.865234],[-39.935083, -9.228516],[-37.39446, -7.382813],[-34.330038, -6.943359],[-30.847893, -7.470703],[-26.607236, -9.667969],[-13.820804, 11.337891],[-15.437752, 12.744141],[-19.712985, 18.720703],[-21.769262, 21.621094],[-23.312718, 23.115234],[-27.140215, 25.839844],[-27.234635, 29.003906],[-28.246636, 28.652344],[-29.76912, 28.476563],[-32.844969, 28.476563],[-37.23574, 27.773438],[-52.550457, 22.412109],[-58.921126, 20.390625],[-63.993497, 21.533203],[-64.376515, 14.589844],[-64.791755, 9.931641],[-65.274383, 6.855469],[-65.675984, 5.449219],[-66.74031, 1.757813],[-67.391482, -1.757813],[-67.526354, -3.867188],[-67.425272, -6.152344],[-67.15361, -8.085938],[-66.390508, -11.513672],[-67.15361, -8.085938],[-62.932612, -24.697266],[-61.245015, -29.882813],[-60.256642, -31.552734],[-58.830197, -32.695313],[-57.295032, -33.046875],[-55.989344, -32.607422],[-54.739702, -31.992188],[-53.65929, -31.904297],[-52.443359, -32.255859],[-51.248007, -32.783203],[-50.694137, -33.398438]],{
-		weight: 1,
-		opacity: 1,
-		color: 'white',
-		fillOpacity: 0.3,
-		fillColor: '#ffcb31'
-	});
-
-	var region8 = L.polygon([[44.024422, -2.460938],[52.961875, 13.183594],[54.927142, 18.720703],[55.429013, 21.005859],[55.776573, 23.730469],[55.37911, 26.015625],[55.128649, 27.333984],[54.521081, 31.201172],[55.229023, 33.574219],[56.511018, 35.595703],[58.077876, 37.529297],[61.058285, 39.902344],[57.73589, 49.306641],[56.639741, 51.503906],[55.75903, 53.085938],[54.959101, 54.316406],[53.904338, 55.810547],[49.267805, 55.722656],[45.02695, 55.283203],[39.164141, 53.789063],[27.215556, 50.449219],[19.808054, 48.427734],[21.713929, 36.914063],[22.203384, 34.628906],[23.096282, 32.783203],[24.384472, 30.9375],[28.40149, 27.246094],[33.893096, 21.533203],[36.621852, 18.457031],[38.641701, 15.292969],[39.597037, 13.007813],[40.271468, 10.458984],[42.773382, 0.087891]],{
-		weight: 1,
-		opacity: 1,
-		color: 'white',
-		fillOpacity: 0.3,
-		fillColor: '#b3d445'
-	});
-
-	var region9 = L.polygon([[19.808054, 48.427734],[21.713929, 36.914063],[22.203384, 34.628906],[23.096282, 32.783203],[24.384472, 30.9375],[28.40149, 27.246094],[33.893096, 21.533203],[36.621852, 18.457031],[38.641701, 15.292969],[39.597037, 13.007813],[40.271468, 10.458984],[42.773382, 0.087891],[44.024422, -2.460938],[34.307144, -13.271484],[28.086149, -10.634766],[21.135069, -8.349609],[12.472078, -5.185547],[10.409177, -4.482422],[7.629633, -3.164063],[4.393551, -0.615234],[0.967484, 3.251953],[-1.670951, 5.976563],[-3.39995, 7.910156],[-5.329305, 8.613281],[-8.298388, 9.404297],[-11.762343, 10.371094],[-13.820804, 11.337891],[-15.437752, 12.744141],[-19.712985, 18.720703],[-21.769262, 21.621094],[-23.312718, 23.115234],[-27.140215, 25.839844],[-27.234635, 29.003906],[-26.764413, 30.058594],[-25.262595, 31.816406],[-23.966176, 32.519531],[-22.43134, 32.080078],[-17.978733, 37.001953],[-14.604847, 40.429688],[-12.811801, 42.011719],[-11.005904, 43.154297],[-9.449062, 43.857422],[-7.623887, 44.296875],[-4.039618, 44.824219],[8.754795, 46.40625]],{
-		weight: 1,
-		opacity: 1,
-		color: 'white',
-		fillOpacity: 0.3,
-		fillColor: '#79cdcd'
 	});
 
 	var num10 = L.icon({
@@ -891,201 +827,335 @@
 		popupAnchor: [1, -38],
 		tooltipAnchor: [16, -28],
 	});
+	
+	var num900 = L.icon({
+		iconUrl:       'icons/buildings/900.png',
+		iconRetinaUrl: 'icons/buildings/900.png',
+		iconSize:    [40, 40],
+		iconAnchor:  [20, 40],
+		popupAnchor: [1, -38],
+		tooltipAnchor: [16, -28],
+	});
+	
+	var num901 = L.icon({
+		iconUrl:       'icons/buildings/901.png',
+		iconRetinaUrl: 'icons/buildings/901.png',
+		iconSize:    [40, 40],
+		iconAnchor:  [20, 40],
+		popupAnchor: [1, -38],
+		tooltipAnchor: [16, -28],
+	});
+	
+	var num902 = L.icon({
+		iconUrl:       'icons/buildings/902.png',
+		iconRetinaUrl: 'icons/buildings/902.png',
+		iconSize:    [40, 40],
+		iconAnchor:  [20, 40],
+		popupAnchor: [1, -38],
+		tooltipAnchor: [16, -28],
+	});
+	
+	var num903 = L.icon({
+		iconUrl:       'icons/buildings/903.png',
+		iconRetinaUrl: 'icons/buildings/903.png',
+		iconSize:    [40, 40],
+		iconAnchor:  [20, 40],
+		popupAnchor: [1, -38],
+		tooltipAnchor: [16, -28],
+	});
+	
+	var num904 = L.icon({
+		iconUrl:       'icons/buildings/904.png',
+		iconRetinaUrl: 'icons/buildings/904.png',
+		iconSize:    [40, 40],
+		iconAnchor:  [20, 40],
+		popupAnchor: [1, -38],
+		tooltipAnchor: [16, -28],
+	});
+	
+	var num905 = L.icon({
+		iconUrl:       'icons/buildings/905.png',
+		iconRetinaUrl: 'icons/buildings/905.png',
+		iconSize:    [40, 40],
+		iconAnchor:  [20, 40],
+		popupAnchor: [1, -38],
+		tooltipAnchor: [16, -28],
+	});
+	
+	var num906 = L.icon({
+		iconUrl:       'icons/buildings/906.png',
+		iconRetinaUrl: 'icons/buildings/906.png',
+		iconSize:    [40, 40],
+		iconAnchor:  [20, 40],
+		popupAnchor: [1, -38],
+		tooltipAnchor: [16, -28],
+	});
+	
+	var num907 = L.icon({
+		iconUrl:       'icons/buildings/907.png',
+		iconRetinaUrl: 'icons/buildings/907.png',
+		iconSize:    [40, 40],
+		iconAnchor:  [20, 40],
+		popupAnchor: [1, -38],
+		tooltipAnchor: [16, -28],
+	});
+	
+	var num908 = L.icon({
+		iconUrl:       'icons/buildings/908.png',
+		iconRetinaUrl: 'icons/buildings/908.png',
+		iconSize:    [40, 40],
+		iconAnchor:  [20, 40],
+		popupAnchor: [1, -38],
+		tooltipAnchor: [16, -28],
+	});
+	
+	var num909 = L.icon({
+		iconUrl:       'icons/buildings/909.png',
+		iconRetinaUrl: 'icons/buildings/909.png',
+		iconSize:    [40, 40],
+		iconAnchor:  [20, 40],
+		popupAnchor: [1, -38],
+		tooltipAnchor: [16, -28],
+	});
+	
+	var num910 = L.icon({
+		iconUrl:       'icons/buildings/910.png',
+		iconRetinaUrl: 'icons/buildings/910.png',
+		iconSize:    [40, 40],
+		iconAnchor:  [20, 40],
+		popupAnchor: [1, -38],
+		tooltipAnchor: [16, -28],
+	});
+	
+	var num911 = L.icon({
+		iconUrl:       'icons/buildings/911.png',
+		iconRetinaUrl: 'icons/buildings/911.png',
+		iconSize:    [40, 40],
+		iconAnchor:  [20, 40],
+		popupAnchor: [1, -38],
+		tooltipAnchor: [16, -28],
+	});
+	
+	var num912 = L.icon({
+		iconUrl:       'icons/buildings/912.png',
+		iconRetinaUrl: 'icons/buildings/912.png',
+		iconSize:    [40, 40],
+		iconAnchor:  [20, 40],
+		popupAnchor: [1, -38],
+		tooltipAnchor: [16, -28],
+	});
+	
+	var num913 = L.icon({
+		iconUrl:       'icons/buildings/913.png',
+		iconRetinaUrl: 'icons/buildings/913.png',
+		iconSize:    [40, 40],
+		iconAnchor:  [20, 40],
+		popupAnchor: [1, -38],
+		tooltipAnchor: [16, -28],
+	});
+	
+	var num914 = L.icon({
+		iconUrl:       'icons/buildings/914.png',
+		iconRetinaUrl: 'icons/buildings/914.png',
+		iconSize:    [40, 40],
+		iconAnchor:  [20, 40],
+		popupAnchor: [1, -38],
+		tooltipAnchor: [16, -28],
+	});
 
 	
 	
 	
-	var buildings10 = L.marker([61.312452, 11.25], {icon: num10}),
-		buildings11 = L.marker([64.661517, 18.105469], {icon: num11}),
-		buildings12 = L.marker([59.220934, 19.599609], {icon: num12}),
-		buildings13 = L.marker([59.220934, 31.640625], {icon: num13})
-		buildings20 = L.marker([54.367759, 0.791016], {icon: num20}),
-		buildings21 = L.marker([50.569283, -20.566406], {icon: num21}),
-		buildings22 = L.marker([45.39845, -15.556641], {icon: num22}),
-		buildings30 = L.marker([48.166085, 13.710938], {icon: num30}),
-		buildings31 = L.marker([52.749594, 31.552734], {icon: num31}),
-		buildings32 = L.marker([39.027719, 25.751953], {icon: num32}),
-		buildings33 = L.marker([53.120405, 48.955078], {icon: num33}),
-		buildings34 = L.marker([29.22889, 41.396484], {icon: num34}),
-		buildings35 = L.marker([41.640078, 49.042969], {icon: num35}),
-		buildings40 = L.marker([31.877558, -1.669922], {icon: num40}),
-		buildings41 = L.marker([35.46067, 10.722656], {icon: num41}),
-		buildings42 = L.marker([21.698265, 5.097656], {icon: num42}),
-		buildings43 = L.marker([27.527758, 20.214844], {icon: num43}),
-		buildings44 = L.marker([10.487812, 11.074219], {icon: num44}),
-		buildings45 = L.marker([17.644022, 28.476563], {icon: num45}),
-		buildings46 = L.marker([1.054628, 18.632813], {icon: num46}),
-		buildings47 = L.marker([2.723583, 35.15625], {icon: num47}),
-		buildings48 = L.marker([-6.315299, 25.927734], {icon: num48}),
-		buildings50 = L.marker([43.452919, -37.96875], {icon: num50}),
-		buildings51 = L.marker([39.232253, -32.607422], {icon: num51}),
-		buildings52 = L.marker([37.370157, -41.308594], {icon: num52}),
-		buildings53 = L.marker([31.802893, -44.121094], {icon: num53}),
-		buildings54 = L.marker([31.877558, -29.707031], {icon: num54}),
-		buildings55 = L.marker([27.137368, -20.566406], {icon: num55}),
-		buildings56 = L.marker([17.644022, -14.238281], {icon: num56}),
-		buildings600 = L.marker([8.146243, -59.589844], {icon: num600}),
-		buildings601 = L.marker([8.494105, -50.097656], {icon: num601}),
-		buildings602 = L.marker([1.318243, -51.855469], {icon: num602}),
-		buildings603 = L.marker([4.82826, -42.363281], {icon: num603}),
-		buildings604 = L.marker([-7.449624, -39.462891], {icon: num604}),
-		buildings605 = L.marker([1.406109, -36.5625], {icon: num605}),
-		buildings606 = L.marker([-5.790897, -30.410156], {icon: num606}),
-		buildings607 = L.marker([0.703107, -28.564453], {icon: num607}),
-		buildings608 = L.marker([2.547988, -18.457031], {icon: num608}),
-		buildings609 = L.marker([8.146243, -8.964844], {icon: num609}),
-		buildings610 = L.marker([-4.302591, -12.392578], {icon: num610}),
-		buildings611 = L.marker([-14.43468, -30.849609], {icon: num611}),
-		buildings612 = L.marker([-19.311143, -21.708984], {icon: num612}),
-		buildings613 = L.marker([-27.605671, -21.181641], {icon: num613}),
-		buildings614 = L.marker([-27.527758, -13.886719], {icon: num614}),
-		buildings615 = L.marker([-35.603719, -18.808594], {icon: num615}),
-		buildings616 = L.marker([-36.597889, -11.953125], {icon: num616}),
-		buildings617 = L.marker([-16.130262, -1.757813], {icon: num617}),
-		buildings700 = L.marker([-8.841651, -70.751953], {icon: num700}),
-		buildings701 = L.marker([-12.897489, -48.164063], {icon: num701}),
-		buildings702 = L.marker([-2.372369, -60.908203], {icon: num702}),
-		buildings703 = L.marker([-23.241346, -49.394531], {icon: num703}),
-		buildings704 = L.marker([-15.284185, -68.203125], {icon: num704}),
-		buildings705 = L.marker([-18.895893, -40.693359], {icon: num705}),
-		buildings706 = L.marker([-12.21118, -58.974609], {icon: num706}),
-		buildings707 = L.marker([-30.372875, -45], {icon: num707}),
-		buildings708 = L.marker([-19.890723, -62.753906], {icon: num708}),
-		buildings709 = L.marker([-27.137368, -36.386719], {icon: num709}),
-		buildings710 = L.marker([-26.74561, -60.644531], {icon: num710}),
-		buildings711 = L.marker([-34.307144, -40.253906], {icon: num711}),
-		buildings712 = L.marker([-33.211116, -54.492187], {icon: num712}),
-		buildings713 = L.marker([-35.88905, -31.201172], {icon: num713}),
-		buildings714 = L.marker([-40.111689, -49.130859], {icon: num714}),
-		buildings715 = L.marker([-42.293564, -34.980469], {icon: num715}),
-		buildings800 = L.marker([26.273714, 53.613281], {icon: num800}),
-		buildings801 = L.marker([11.781325, 58.359375], {icon: num801}),
-		buildings802 = L.marker([2.723583, 48.867188], {icon: num802}),
-		buildings803 = L.marker([-0.439449, 57.480469], {icon: num803}),
-		buildings804 = L.marker([-18.062312, 42.275391], {icon: num804}),
-		buildings805 = L.marker([-11.609193, 55.283203], {icon: num805}),
-		buildings806 = L.marker([-24.20689, 49.306641], {icon: num806}),
-		buildings807 = L.marker([-16.214675, 61.083984], {icon: num807}),
-		buildings808 = L.marker([-13.83808, 69.433594], {icon: num808}),
-		buildings809 = L.marker([-5.353521, 70.576172], {icon: num809}),
-		buildings810 = L.marker([2.108899, 68.291016], {icon: num810}),
-		buildings811 = L.marker([9.968851, 65.214844], {icon: num811});
-
-	var el_crash1 = L.marker([-1.845384, 6.152344], {icon: Crash}).bindPopup('<b>Helicopter Crash,<br>weapons in a box.</b>'),
-		el_crash2 = L.marker([22.350076, 34.892578], {icon: Crash}).bindPopup('<b>Helicopter Crash, weapons in a box.</b><img src = "./icons/crush/2.avif" style ="width:300px">'),
-		el_crash3 = L.marker([33.870416, -12.568359], {icon: Crash}).bindPopup('<b>Helicopter Crash,<br>weapons in a box.</b>'),
-		el_crash4 = L.marker([19.973349, -30.498047], {icon: Crash}).bindPopup('<b>Helicopter Crash, weapons in a box.</b><img src = "./icons/crush/4.avif" style ="width:300px">'),
-		el_crash5 = L.marker([0.703107, -44.736328], {icon: Crash}).bindPopup('<b>Helicopter Crash, weapons in a box.</b><img src = "./icons/crush/5.avif" style ="width:300px">'),
-		el_crash6 = L.marker([54.72462, 32.167969], {icon: Crash}).bindPopup('<b>Helicopter Crash, weapons in a box.</b><img src = "./icons/crush/6.avif" style ="width:300px">'),
-		el_crash7 = L.marker([3.951941, 54.228516], {icon: Crash}).bindPopup('<b>Helicopter Crash, weapons in a box.</b><img src = "./icons/crush/7.avif" style ="width:300px">'),
-		el_crash8 = L.marker([-16.383391, -3.427734], {icon: Crash}).bindPopup('<b>Armory</b>'),
-		el_crash9 = L.marker([-27.293689, -42.978516], {icon: Crash}).bindPopup('<b>Helicopter Crash, weapons in a box.</b><img src = "./icons/crush/9.avif" style ="width:300px">');
-	
-	var el_medic1 = L.marker([32, -16], {icon: Medic}).bindPopup('<b>First aid kit</b><img src = "./icons/medic/1.avif" style ="width:300px">');
-		el_medic2 = L.marker([38.479395, -48.427734], {icon: Medic}).bindPopup('<b>First aid kit</b><img src = "./icons/medic/2.avif" style ="width:300px">'),
-		el_medic3 = L.marker([45.706179, -11.777344], {icon: Medic}).bindPopup('<b>First aid kit</b><img src = "./icons/medic/3.avif" style ="width:300px">'),
-		el_medic4 = L.marker([44.964798, -19.863281], {icon: Medic}).bindPopup('<b>First aid kit</b><img src = "./icons/medic/4.avif" style ="width:300px">'),
-		el_medic5 = L.marker([49.95122, -23.994141], {icon: Medic}).bindPopup('<b>First aid kit</b><img src = "./icons/medic/5.avif" style ="width:300px">'),
-		el_medic6 = L.marker([-14.51978, 25.839844], {icon: Medic}).bindPopup('<b>First aid kit</b><img src = "./icons/medic/6.avif" style ="width:300px">');
-		el_medic7 = L.marker([4.302591, -27.861328], {icon: Medic}).bindPopup('<b>First aid kit</b><img src = "./icons/medic/7.avif" style ="width:300px">'),
-		el_medic9 = L.marker([-22.755921, -26.279297], {icon: Medic}).bindPopup('<b>First aid kit</b><img src = "./icons/medic/9.avif" style ="width:300px">'),
-		el_medic10 = L.marker([-31.802893, -39.814453], {icon: Medic}).bindPopup('<b>First aid kit</b><img src = "./icons/medic/10.avif" style ="width:300px">'),
-		el_medic11 = L.marker([-32.10119, -52.646484], {icon: Medic}).bindPopup('<b>First aid kit</b><img src = "./icons/medic/11.avif" style ="width:300px">'),
-		el_medic12 = L.marker([-11.264612, -69.609375], {icon: Medic}).bindPopup('<b>First aid kit</b><img src = "./icons/medic/12.avif" style ="width:300px">');
-	
-	var el_shop1 = L.marker([20, -28], {icon: Shop}).bindPopup('<b>Food, water</b><img src = "./icons/shop/1.avif" style ="width:300px">'),
-		el_shop2 = L.marker([-1.933227, 1.230469], {icon: Shop}).bindPopup('<b>Food, water</b><img src = "./icons/shop/2.avif" style ="width:300px">'),
-		el_shop3 = L.marker([-8.494105, -14.501953], {icon: Shop}).bindPopup('<b>Food, water</b><img src = "./icons/shop/3.avif" style ="width:300px">'),
-		el_shop4 = L.marker([11.436955, -52.822266], {icon: Shop}).bindPopup('<b>Food, water</b><img src = "./icons/shop/4.avif" style ="width:300px">'),
-		el_shop5 = L.marker([31.428663, 28.388672], {icon: Shop}).bindPopup('<b>Food, water</b><img src = "./icons/shop/5.avif" style ="width:300px">'),
-		el_shop6 = L.marker([49.61071, 0], {icon: Shop}).bindPopup('<b>Food, water</b><img src = "./icons/shop/6.avif" style ="width:300px">'),
-		el_shop7 = L.marker([21.453069, -4.21875], {icon: Shop}).bindPopup('<b>Food, water</b><img src = "./icons/shop/7.avif" style ="width:300px">'),
-		el_shop8 = L.marker([-13.068777, 37.177734], {icon: Shop}).bindPopup('<b>Food, water</b><img src = "./icons/shop/8.avif" style ="width:300px">'),
-		el_shop9 = L.marker([40.313043, -29.355469], {icon: Shop}).bindPopup('<b>Food, water</b><img src = "./icons/shop/9.avif" style ="width:300px">'),
-		el_shop10 = L.marker([-14.093957, -63.896484], {icon: Shop}).bindPopup('<b>Food, water</b><img src = "./icons/shop/10.avif" style ="width:300px">'),
-		el_shop11 = L.marker([-10.055403, -21.269531], {icon: Shop}).bindPopup('<b>Food, water</b><img src = "./icons/shop/11.avif" style ="width:300px">');
-	
-	var el_helicopter1 = L.marker([-10.882275, -6.091797], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter2 = L.marker([-18.812811, 15.941406], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter3 = L.marker([-28.536275, 27], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter4 = L.marker([-7.885147, 34.601563], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter5 = L.marker([-17.811456, 43.654297], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter6 = L.marker([15.284185, 42.890625], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter7 = L.marker([36.031332, 57.804688], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter8 = L.marker([52.1, 29.707031], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter9 = L.marker([48.516604, -15.380859], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter10 = L.marker([52.179343, -22.548828], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter11 = L.marker([34.307144, -11.777344], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter12 = L.marker([29.688053, -17.666016], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter13 = L.marker([28.459033, -30.761719], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter14 = L.marker([29.916852, -42.714844], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter15 = L.marker([12.897489, -34.453125], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter16 = L.marker([23.644524, -50.097656], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter17 = L.marker([7.449624, -47.724609], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter18 = L.marker([-14.667338, -47.076172], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter19 = L.marker([-9.795678, -37.880859], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter20 = L.marker([-20.715015, -24.169922], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter21 = L.marker([-30.221102, -5.097656], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter22 = L.marker([-28.22697, -14.0625], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter23 = L.marker([-47.694974, -26.542969], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter24 = L.marker([-51.399206, -29.091797], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter25 = L.marker([-65.694476, -3.779297], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter26 = L.marker([34.234512, -36.210938], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter27 = L.marker([9.622414, -3.955078], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter28 = L.marker([-56.170023, 1.845703], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter29 = L.marker([44.150681, -1.054688], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter30 = L.marker([3.776559, 49.306641], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter31 = L.marker([-23.80545, -49.394531], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter32 = L.marker([9.275622, 57.832031], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter33 = L.marker([-38.548165, -42.978516], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter34 = L.marker([-1.669686, -18.28125], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter35 = L.marker([-14.944785, 54.580078], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter36 = L.marker([-8.754795, 17.314453], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter37 = L.marker([12.983148, 50.800781], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter38 = L.marker([-13.496473, 23.027344], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter39 = L.marker([-36.456636, -19.511719], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter40 = L.marker([-7.885147, -50.361328], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter41 = L.marker([10.314919, 2.373047], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
-		el_helicopter42 = L.marker([-30.902225, -45.087891], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>');
+	var buildings10 = L.marker([36.173357, 19.643555], {icon: num10}),
+		buildings11 = L.marker([41.409776, 25.795898], {icon: num11}),
+		buildings12 = L.marker([32.7688, 27.333984], {icon: num12}),
+		buildings13 = L.marker([33.100745, 38.540039], {icon: num13})
+		buildings20 = L.marker([25.641526, 9.799805], {icon: num20}),
+		buildings21 = L.marker([21.207459, -10.371094], {icon: num21}),
+		buildings22 = L.marker([13.197165, -4.570313], {icon: num22}),
+		buildings30 = L.marker([15.580711, 22.016602], {icon: num30}),
+		buildings31 = L.marker([22.22809, 38.232422], {icon: num31}),
+		buildings32 = L.marker([4.258768, 32.958984], {icon: num32}),
+		buildings33 = L.marker([22.755921, 54.448242], {icon: num33}),
+		buildings34 = L.marker([-6.315299, 47.636719], {icon: num34}),
+		buildings35 = L.marker([7.275292, 54.448242], {icon: num35}),
+		buildings40 = L.marker([-2.679687, 7.646484], {icon: num40}),
+		buildings41 = L.marker([0.834931, 19.467773], {icon: num41}),
+		buildings42 = L.marker([-12.511665, 14.150391], {icon: num42}),
+		buildings43 = L.marker([-7.406048, 27.861328], {icon: num43}),
+		buildings44 = L.marker([-22.43134, 19.643555], {icon: num44}),
+		buildings45 = L.marker([-16.972741, 35.90332], {icon: num45}),
+		buildings46 = L.marker([-30.372875, 27.026367], {icon: num46}),
+		buildings47 = L.marker([-30.069094, 41.923828], {icon: num47}),
+		buildings48 = L.marker([-37.055177, 33.354492], {icon: num48}),
+		buildings50 = L.marker([11.652236, -25.576172], {icon: num50}),
+		buildings51 = L.marker([6.8828, -21.049805], {icon: num51}),
+		buildings52 = L.marker([4.740675, -28.740234], {icon: num52}),
+		buildings53 = L.marker([-1.318243, -31.289063], {icon: num53}),
+		buildings54 = L.marker([-1.669686, -18.28125], {icon: num54}),
+		buildings55 = L.marker([-7.623887, -10.415039], {icon: num55}),
+		buildings56 = L.marker([-17.056785, -3.779297], {icon: num56}),
+		buildings600 = L.marker([-23.725012, -45.791016], {icon: num600}),
+		buildings601 = L.marker([-23.5237, -36.914063], {icon: num601}),
+		buildings602 = L.marker([-30.069094, -38.759766], {icon: num602}),
+		buildings603 = L.marker([-27.059126, -29.926758], {icon: num603}),
+		buildings604 = L.marker([-36.633162, -26.894531], {icon: num604}),
+		buildings605 = L.marker([-29.764377, -24.477539], {icon: num605}),
+		buildings606 = L.marker([-35.46067, -18.632813], {icon: num606}),
+		buildings607 = L.marker([-30.107118, -16.962891], {icon: num607}),
+		buildings608 = L.marker([-28.960089, -7.558594], {icon: num608}),
+		buildings609 = L.marker([-24.407138, 1.054688], {icon: num609}),
+		buildings610 = L.marker([-34.741612, -2.15332], {icon: num610}),
+		buildings611 = L.marker([-41.934977, -18.808594], {icon: num611}),
+		buildings612 = L.marker([-45.521744, -10.678711], {icon: num612}),
+		buildings613 = L.marker([-51.37178, -9.711914], {icon: num613}),
+		buildings614 = L.marker([-51.781436, -2.768555], {icon: num614}),
+		buildings615 = L.marker([-56.389584, -7.558594], {icon: num615}),
+		buildings616 = L.marker([-57.160078, -1.40625], {icon: num616}),
+		buildings617 = L.marker([-43.325178, 8.217773], {icon: num617}),
+		buildings700 = L.marker([-37.822802, -56.293945], {icon: num700}),
+		buildings701 = L.marker([-41.771312, -34.541016], {icon: num701}),
+		buildings702 = L.marker([-32.953368, -46.582031], {icon: num702}),
+		buildings703 = L.marker([-48.166085, -35.81543], {icon: num703}),
+		buildings704 = L.marker([-43.325178, -53.041992], {icon: num704}),
+		buildings705 = L.marker([-45.552525, -27.773438], {icon: num705}),
+		buildings706 = L.marker([-40.513799, -44.692383], {icon: num706}),
+		buildings707 = L.marker([-52.855864, -31.640625], {icon: num707}),
+		buildings708 = L.marker([-45.981695, -48.295898], {icon: num708}),
+		buildings709 = L.marker([-51.151786, -23.598633], {icon: num709}),
+		buildings710 = L.marker([-51.234407, -45.966797], {icon: num710}),
+		buildings711 = L.marker([-55.603178, -27.46582], {icon: num711}),
+		buildings712 = L.marker([-54.952386, -40.209961], {icon: num712}),
+		buildings713 = L.marker([-56.800878, -18.544922], {icon: num713}),
+		buildings714 = L.marker([-59.712097, -35.068359], {icon: num714}),
+		buildings715 = L.marker([-60.608542, -22.631836], {icon: num715}),
+		buildings800 = L.marker([-7.100893, 58.754883], {icon: num800}),
+		buildings801 = L.marker([-21.043491, 63.105469], {icon: num801}),
+		buildings802 = L.marker([-28.806174, 54.667969], {icon: num802}),
+		buildings803 = L.marker([-31.54109, 62.314453], {icon: num803}),
+		buildings804 = L.marker([-44.715514, 48.383789], {icon: num804}),
+		buildings805 = L.marker([-40.044438, 60.205078], {icon: num805}),
+		buildings806 = L.marker([-48.777913, 54.931641], {icon: num806}),
+		buildings807 = L.marker([-42.843751, 65.830078], {icon: num807}),
+		buildings808 = L.marker([-41.376809, 73.608398], {icon: num808}),
+		buildings809 = L.marker([-35.496456, 74.707031], {icon: num809}),
+		buildings810 = L.marker([-29.22889, 72.46582], {icon: num810}),
+		buildings811 = L.marker([-22.71539, 69.477539], {icon: num811}),
+		buildings900 = L.marker([63.332413, -41.967773], {icon: num900}),
+		buildings901 = L.marker([64.567319, -34.936523], {icon: num901}),
+		buildings902 = L.marker([57.088515, -30.322266], {icon: num902}),
+		buildings903 = L.marker([61.227957, -22.939453], {icon: num903}),
+		buildings904 = L.marker([47.189712, -23.203125], {icon: num904}),
+		buildings905 = L.marker([51.206883, -17.973633], {icon: num905}),
+		buildings906 = L.marker([44.902578, -16.831055], {icon: num906}),
+		buildings907 = L.marker([56.776808, -12.128906], {icon: num907}),
+		buildings908 = L.marker([46.498392, 6.679688], {icon: num909}),
+		buildings909 = L.marker([66.372755, -15.556641], {icon: num910}),
+		buildings910 = L.marker([62.995158, 0.615234], {icon: num911}),
+		buildings911 = L.marker([58.631217, 14.0625], {icon: num912}),
+		buildings912 = L.marker([58.031372, 26.455078], {icon: num913}),
+		buildings913 = L.marker([52.589701, 23.203125], {icon: num914}),
+		buildings914 = L.marker([38.925229, -5.581055], {icon: num908});
 		
-	var el_bus1 = L.marker([-5.441022, 8.4375], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
-		el_bus2 = L.marker([-11.953349, -10.810547], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
-		el_bus3 = L.marker([47.398349, -5.273438], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
-		el_bus4 = L.marker([59.712097, 40.693359], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
-		el_bus5 = L.marker([30.902225, -10.283203], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
-		el_bus6 = L.marker([-25.980829, 27.773438], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
-		el_bus7 = L.marker([-16.972741, -53.228516], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
-		el_bus8 = L.marker([2.547988, -67.148438], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
-		el_bus9 = L.marker([20.062118, -37.353516], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
-		el_bus10 = L.marker([-46.55886, -25.576172], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
-		el_bus11 = L.marker([55.875311, -34.332031], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
-		el_bus12 = L.marker([-64.320872, 13.447266], {icon: Bus}).bindPopup('<b>Get on the roof,<br>save your life</b>');
-		
-	var el_ambulance1 = L.marker([23.725012, 31.640625], {icon: Ambulance}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
-		el_ambulance4 = L.marker([51.508742, -26.191406], {icon: Ambulance}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
-		el_ambulance5 = L.marker([40.313043, -11.689453], {icon: Ambulance}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
-		el_ambulance6 = L.marker([-30.675715, -7.207031], {icon: Ambulance}).bindPopup('<b>Get on the roof,<br>save your life</b>'),
-		el_ambulance7 = L.marker([1.318243, -60.732422], {icon: Ambulance}).bindPopup('<b>Get on the roof,<br>save your life</b>');
+	var el_crash1 = L.marker([-31.391158, 15.205078], {icon: Crash}).bindPopup('<b>Helicopter Crash,<br>weapons in a box.</b>'),
+		el_crash2 = L.marker([-10.53102, 40.869141], {icon: Crash}).bindPopup('<b>Helicopter Crash, weapons in a box.</b><img src = "./icons/crush/2.avif" style ="width:300px">'),
+		el_crash3 = L.marker([2.108899, -2.856445], {icon: Crash}).bindPopup('<b>Helicopter Crash,<br>weapons in a box.</b>'),
+		el_crash4 = L.marker([-13.154376, -18.325195], {icon: Crash}).bindPopup('<b>Helicopter Crash, weapons in a box.</b><img src = "./icons/crush/4.avif" style ="width:300px">'),
+		el_crash5 = L.marker([-29.305561, -32.607422], {icon: Crash}).bindPopup('<b>Helicopter Crash, weapons in a box.</b><img src = "./icons/crush/5.avif" style ="width:300px">'),
+		el_crash6 = L.marker([27.76133, 39.023438], {icon: Crash}).bindPopup('<b>Helicopter Crash, weapons in a box.</b><img src = "./icons/crush/6.avif" style ="width:300px">'),
+		el_crash7 = L.marker([-26.863281, 59.853516], {icon: Crash}).bindPopup('<b>Helicopter Crash, weapons in a box.</b><img src = "./icons/crush/7.avif" style ="width:300px">'),
+		el_crash8 = L.marker([-43.580391, 6.108398], {icon: Crash}).bindPopup('<b>Armory</b>'),
+		el_crash9 = L.marker([-50.289339, -30.19043], {icon: Crash}).bindPopup('<b>Helicopter Crash, weapons in a box.</b><img src = "./icons/crush/9.avif" style ="width:300px">');
+	
+	var el_medic1 = L.marker([-1.230374, -5.053711], {icon: Medic}).bindPopup('<b>First aid kit</b><img src = "./icons/medic/1.avif" style ="width:300px">');
+		el_medic2 = L.marker([7.100893, -35.683594], {icon: Medic}).bindPopup('<b>First aid kit</b><img src = "./icons/medic/2.avif" style ="width:300px">'),
+		el_medic3 = L.marker([14.264383, -1.274414], {icon: Medic}).bindPopup('<b>First aid kit</b><img src = "./icons/medic/3.avif" style ="width:300px">'),
+		el_medic4 = L.marker([13.453737, -7.954102], {icon: Medic}).bindPopup('<b>First aid kit</b><img src = "./icons/medic/4.avif" style ="width:300px">'),
+		el_medic5 = L.marker([20.96144, -13.095703], {icon: Medic}).bindPopup('<b>First aid kit</b><img src = "./icons/medic/5.avif" style ="width:300px">'),
+		el_medic6 = L.marker([-41.836828, 33.662109], {icon: Medic}).bindPopup('<b>First aid kit</b><img src = "./icons/medic/6.avif" style ="width:300px">');
+		el_medic7 = L.marker([-26.549223, -16.040039], {icon: Medic}).bindPopup('<b>First aid kit</b><img src = "./icons/medic/7.avif" style ="width:300px">'),
+		el_medic9 = L.marker([-47.040182, -14.72168], {icon: Medic}).bindPopup('<b>First aid kit</b><img src = "./icons/medic/9.avif" style ="width:300px">'),
+		el_medic10 = L.marker([-53.644638, -26.279297], {icon: Medic}).bindPopup('<b>First aid kit</b><img src = "./icons/medic/10.avif" style ="width:300px">'),
+		el_medic11 = L.marker([-52.802761, -38.671875], {icon: Medic}).bindPopup('<b>First aid kit</b><img src = "./icons/medic/11.avif" style ="width:300px">'),
+		el_medic12 = L.marker([-39.808536, -55.019531], {icon: Medic}).bindPopup('<b>First aid kit</b><img src = "./icons/medic/12.avif" style ="width:300px">');
+	
+	var el_shop1 = L.marker([-12.340002, -15.644531], {icon: Shop}).bindPopup('<b>Food, water</b><img src = "./icons/shop/1.avif" style ="width:300px">'),
+		el_shop2 = L.marker([-32.10119, 10.239258], {icon: Shop}).bindPopup('<b>Food, water</b><img src = "./icons/shop/2.avif" style ="width:300px">'),
+		el_shop3 = L.marker([-37.020098, -3.515625], {icon: Shop}).bindPopup('<b>Food, water</b><img src = "./icons/shop/3.avif" style ="width:300px">'),
+		el_shop4 = L.marker([-20.468189, -39.418945], {icon: Shop}).bindPopup('<b>Food, water</b><img src = "./icons/shop/4.avif" style ="width:300px">'),
+		el_shop5 = L.marker([-1.054628, 35.288086], {icon: Shop}).bindPopup('<b>Food, water</b><img src = "./icons/shop/5.avif" style ="width:300px">'),
+		el_shop6 = L.marker([21.412162, 9.228516], {icon: Shop}).bindPopup('<b>Food, water</b><img src = "./icons/shop/6.avif" style ="width:300px">'),
+		el_shop7 = L.marker([-11.22151, 5.449219], {icon: Shop}).bindPopup('<b>Food, water</b><img src = "./icons/shop/7.avif" style ="width:300px">'),
+		el_shop8 = L.marker([-40.380028, 44.121094], {icon: Shop}).bindPopup('<b>Food, water</b><img src = "./icons/shop/8.avif" style ="width:300px">'),
+		el_shop9 = L.marker([9.102097, -18.676758], {icon: Shop}).bindPopup('<b>Food, water</b><img src = "./icons/shop/9.avif" style ="width:300px">'),
+		el_shop10 = L.marker([-40.279526, -49.438477], {icon: Shop}).bindPopup('<b>Food, water</b><img src = "./icons/shop/10.avif" style ="width:300px">'),
+		el_shop11 = L.marker([-38.61687, -10.327148], {icon: Shop}).bindPopup('<b>Food, water</b><img src = "./icons/shop/11.avif" style ="width:300px">');
+	
+	var el_helicopter1 = L.marker([-74.188052, 6.416016], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'), //goose park
+		el_helicopter2 = L.marker([-68.4638, 11.293945], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter3 = L.marker([-65.293468, -17.578125], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter4 = L.marker([-62.794935, -15.820313], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter5 = L.marker([-51.727028, 4.570313], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter6 = L.marker([-44.339565, 24.038086], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter7 = L.marker([-50.792047, 33.354492], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter8 = L.marker([-58.12432, -29.750977], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'), //bai xiang
+		el_helicopter9 = L.marker([-52.66972, -31.816406], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter10 = L.marker([-47.960502, -35.947266], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter11 = L.marker([-41.14557, -34.101563], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter12 = L.marker([-35.675147, -37.177734], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter13 = L.marker([-37.195331, -25.751953], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'), //immortal
+		el_helicopter14 = L.marker([-23.644524, -35.112305], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter15 = L.marker([-45.73686, -12.568359], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter16 = L.marker([-56.194481, -9.404297], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter17 = L.marker([-51.124213, -3.164063], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter19 = L.marker([-30.486551, -7.602539], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter20 = L.marker([-37.68382, 4.394531], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter21 = L.marker([-20.797201, 5.185547], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'), //shan shui
+		el_helicopter22 = L.marker([-21.616579, 12.041016], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'), 
+		el_helicopter23 = L.marker([-36.668419, 25.224609], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter24 = L.marker([-40.5472, 31.113281], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter25 = L.marker([-35.56798, 40.957031], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter26 = L.marker([-16.594081, 48.911133], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter27 = L.marker([-43.484812, 49.350586], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'), //crane and penis
+		el_helicopter28 = L.marker([-41.211722, 59.633789], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter29 = L.marker([-27.215556, 54.711914], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter30 = L.marker([-22.268764, 63.017578], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter31 = L.marker([-17.476432, 56.206055], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter32 = L.marker([4.477856, 62.138672], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter33 = L.marker([22.593726, 36.650391], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'), //zi yun
+		el_helicopter34 = L.marker([13.83808, 7.163086], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'), //hospital
+		el_helicopter35 = L.marker([1.933227, -2.548828], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter36 = L.marker([20.014645, -4.96582], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter37 = L.marker([24.766785, -13.40332], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter38 = L.marker([2.32846, -24.345703], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'), //old town
+		el_helicopter39 = L.marker([-4.565474, -19.379883], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter40 = L.marker([-2.504085, -7.294922], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter18 = L.marker([-1.493971, -30.322266], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter41 = L.marker([-6.533645, -39.111328], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'), //construction
+		el_helicopter42 = L.marker([-16.383391, -29.575195], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter43 = L.marker([49.181703, 21.884766], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>'),
+		el_helicopter44 = L.marker([64.699105, -35.024414], {icon: Helicopter}).bindPopup('<b>Rescue helicopter</b>');
 	
 	var mg_crash_all = L.layerGroup([el_crash1,el_crash2,el_crash3,el_crash4,el_crash5,el_crash6,el_crash7,el_crash8,el_crash9]).addTo(map);
 	var mg_medic_all = L.layerGroup([el_medic1,el_medic2,el_medic3,el_medic4,el_medic5,el_medic6,el_medic7,el_medic9,el_medic10,el_medic11,el_medic12]).addTo(map);
 	var mg_shop_all = L.layerGroup([el_shop1,el_shop2,el_shop3,el_shop4,el_shop5,el_shop6,el_shop7,el_shop8,el_shop9,el_shop10,el_shop11]).addTo(map);
-	var mg_helicopter_all = L.layerGroup([el_helicopter1,el_helicopter2,el_helicopter3,el_helicopter4,el_helicopter5,el_helicopter6,el_helicopter7,el_helicopter8,el_helicopter9,el_helicopter10,el_helicopter11,el_helicopter12,el_helicopter13,el_helicopter14,el_helicopter15,el_helicopter16,el_helicopter17,el_helicopter18,el_helicopter19,el_helicopter20,el_helicopter21,el_helicopter22,el_helicopter23,el_helicopter24,el_helicopter25,el_helicopter26,el_helicopter27,el_helicopter28,el_helicopter29,el_helicopter30,el_helicopter31,el_helicopter32,el_helicopter33,el_helicopter34,el_helicopter35,el_helicopter36,el_helicopter37,el_helicopter38,el_helicopter39,el_helicopter40,el_helicopter41,el_helicopter42]).addTo(map);
-	var mg_bus_all = L.layerGroup([el_bus1,el_bus2,el_bus3,el_bus4,el_bus5,el_bus6,el_bus7,el_bus8,el_bus9,el_bus10,el_bus11,el_bus12,el_ambulance1,el_ambulance4,el_ambulance5,el_ambulance6,el_ambulance7]);
-	var mg_region_all = L.layerGroup([region1,region2,region3,region4,region5,region6,region7,region8,region9]);
-	var mg_buildings_all = L.layerGroup([buildings10,buildings11,buildings12,buildings13,buildings20,buildings21,buildings22,buildings30,buildings31,buildings32,buildings33,buildings34,buildings35,buildings40,buildings41,buildings42,buildings43,buildings44,buildings45,buildings46,buildings47,buildings48,buildings50,buildings51,buildings52,buildings53,buildings54,buildings55,buildings56,buildings600,buildings601,buildings602,buildings603,buildings604,buildings605,buildings606,buildings607,buildings608,buildings609,buildings610,buildings611,buildings612,buildings613,buildings614,buildings615,buildings616,buildings617,buildings700,buildings701,buildings702,buildings703,buildings704,buildings705,buildings706,buildings707,buildings708,buildings709,buildings710,buildings711,buildings712,buildings713,buildings714,buildings715,buildings800,buildings801,buildings802,buildings803,buildings804,buildings805,buildings806,buildings807,buildings808,buildings809,buildings810,buildings811]);
+	var mg_helicopter_all = L.layerGroup([el_helicopter1,el_helicopter2,el_helicopter3,el_helicopter4,el_helicopter5,el_helicopter6,el_helicopter7,el_helicopter8,el_helicopter9,el_helicopter10,el_helicopter11,el_helicopter12,el_helicopter13,el_helicopter14,el_helicopter15,el_helicopter16,el_helicopter17,el_helicopter18,el_helicopter19,el_helicopter20,el_helicopter21,el_helicopter22,el_helicopter23,el_helicopter24,el_helicopter25,el_helicopter26,el_helicopter27,el_helicopter28,el_helicopter29,el_helicopter30,el_helicopter31,el_helicopter32,el_helicopter33,el_helicopter34,el_helicopter35,el_helicopter36,el_helicopter37,el_helicopter38,el_helicopter39,el_helicopter40,el_helicopter41,el_helicopter42,el_helicopter43,el_helicopter44]).addTo(map);
+	var mg_buildings_all = L.layerGroup([buildings10,buildings11,buildings12,buildings13,buildings20,buildings21,buildings22,buildings30,buildings31,buildings32,buildings33,buildings34,buildings35,buildings40,buildings41,buildings42,buildings43,buildings44,buildings45,buildings46,buildings47,buildings48,buildings50,buildings51,buildings52,buildings53,buildings54,buildings55,buildings56,buildings600,buildings601,buildings602,buildings603,buildings604,buildings605,buildings606,buildings607,buildings608,buildings609,buildings610,buildings611,buildings612,buildings613,buildings614,buildings615,buildings616,buildings617,buildings700,buildings701,buildings702,buildings703,buildings704,buildings705,buildings706,buildings707,buildings708,buildings709,buildings710,buildings711,buildings712,buildings713,buildings714,buildings715,buildings800,buildings801,buildings802,buildings803,buildings804,buildings805,buildings806,buildings807,buildings808,buildings809,buildings810,buildings811,buildings900,buildings901,buildings902,buildings903,buildings904,buildings905,buildings906,buildings907,buildings908,buildings909,buildings910,buildings911,buildings912,buildings913,buildings914]);
 
 	var overlays={ 
 		"<img src='icons/Medic_menu.png' /> Medic" : mg_medic_all, 
 		"<img src='icons/Crash_menu.png' /> Weapon" : mg_crash_all,
 		"<img src='icons/Shop_menu.png' /> Shop" : mg_shop_all,
-		"<img src='icons/Bus_menu.png' /> Bus" : mg_bus_all,
-		"<img src='icons/Region_menu.png' /> Region" : mg_region_all,
 		"<img src='icons/Buildings_menu.png' /> Buildings" : mg_buildings_all,
 		"<img src='icons/Helicopter_menu.png' /> Helipad" : mg_helicopter_all,
 		}
 
-	L.control.layers(null, overlays).addTo(map);
+	var baseMaps = {
+		"Map v1.0" : map2, 
+		"Map v2.0" : map1, 
+	}
+
+	L.control.layers(baseMaps, overlays).addTo(map);
 	
 	</script>
 	<script
