@@ -963,7 +963,33 @@
 		tooltipAnchor: [16, -28],
 	});
 
+
+
+	var jose = L.icon({
+		iconUrl:       'img/Jose.gif',
+		iconRetinaUrl: 'img/Jose.gif',
+		iconSize:    [20, 20],
+		iconAnchor:  [20, 40],
+		popupAnchor: [1, -38],
+		tooltipAnchor: [16, -28],
+		
+	});
+
+	var Jose = L.marker([Math.floor(Math.random() * 60 - 60), Math.floor(Math.random() * 60 - 60)], {icon: jose}).bindPopup('<b>Finally you found me! I need your help. Someone cloned a bunch of gear and I need to get it back. Collect 500 NFTs:</b><a class="nav-link" href="https://lrmap.fun/anticheat">Play Jose Anti-Cheat</a><img src = "img/cool-jose.png" style ="width:150px">');
 	
+	var shelterMarkers = new L.FeatureGroup();
+
+	shelterMarkers.addLayer(Jose);
+
+	map.on('zoomend', function() {
+		if (map.getZoom() <5){
+				map.removeLayer(shelterMarkers);
+		}
+		else {
+				map.addLayer(shelterMarkers);
+			}
+	});
+	    
 	
 	
 	var buildings10 = L.marker([36.173357, 19.643555], {icon: num10}),
