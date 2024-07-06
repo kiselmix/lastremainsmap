@@ -38,21 +38,21 @@ HTMLredraw.prototype.updateLossCount = function(data) {
 };
 
 HTMLredraw.prototype.gameOver = function() {
-  var msg = this.getMessage('Game Over');
+  var msg = this.getMessage('Game Over </br> Press <b>R</b> to restart');
 
   this.messageWrap.show();
   this.messageWrap.appendChild(msg);
 };
 
 HTMLredraw.prototype.gameWin = function() {
-  var msg = this.getMessage('You\'ve Won!');
+  var msg = this.getMessage('We did it! It was already dark, and there was little time left to get out. I hear a helicopter, it seems somewhere nearby.</br></br><style>.iksweb{display: inline-block;cursor: pointer; font-size:20px;text-decoration:none;padding:12px 23px; color:#000000;background:#feb368;border-radius:14px;border:3px solid #354251;}</style><a class="iksweb" href="https://lrmap.fun/anticheat" title="START PLAY">START PLAY</a>');
 
   this.messageWrap.show();
   this.messageWrap.appendChild(msg);
 };
 
 HTMLredraw.prototype.getMessage = function(message) {
-  var data = { h3: message, p: 'Press <b>R</b> to restart' };
+  var data = { h3: message};
 
   var wrap = document.createElement('div');
   for (var tag in data) {
