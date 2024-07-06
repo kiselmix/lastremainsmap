@@ -113,14 +113,14 @@ GameManager.prototype.upLevel = function () {
   this.level++;
 
   switch (true) {
-    case (this.level < 45):
-      this.speed += -6;
+    case (this.level < 5):
+      this.speed += -35;
       break;
-    case (this.level > 46):
+    case (this.level > 6):
       this.speed += 0;
       break;
     default:
-      this.speed += -8;
+      this.speed += -50;
       break;
   }
   this.interval = this.speed*3.4;
@@ -133,7 +133,7 @@ GameManager.prototype.updateScore = function (data) {
     this.score += this.point;
     this.HTMLredraw.updateScore({ value: this.score });
 
-    if (this.score >= 500) {
+    if (this.score >= 100) {
       this.gameWin();
       return false;
     }
