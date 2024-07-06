@@ -32,7 +32,7 @@ h1, h2, h3 {
 }
 
 h3 {
-  font-size: 28px;
+  font-size: 14px;
 }
 
 #game-score {
@@ -606,7 +606,7 @@ h3 {
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
     }
       #message > div p {
-        font-size: 16px;
+        font-size: 10px;
 		text-align: center;
       }
 
@@ -733,4 +733,3 @@ body.is-mobile {
     z-index: 1029;
   }
 }
-/*# sourceMappingURL=style.css.map */
