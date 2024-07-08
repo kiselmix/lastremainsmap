@@ -45,7 +45,7 @@ HTMLredraw.prototype.gameOver = function() {
 };
 
 HTMLredraw.prototype.gameWin = function() {
-  var msg = this.getMessage('We did it! It was already dark, and there was little time left to get out. I hear a helicopter, it seems somewhere nearby.</br></br><style>.iksweb{display: inline-block;cursor: pointer; font-size:20px;text-decoration:none;padding:12px 23px; color:#000000;background:#feb368;border-radius:14px;border:3px solid #354251;}</style><a class="iksweb" href="https://lrmap.fun/anticheat" title="START PLAY">START PLAY</a>');
+  var msg = this.getMessage('We did it! It was already dark, and there was little time left to get out. I hear a helicopter, it seems somewhere nearby.</br></br><style>.iksweb{display: inline-block;cursor: pointer; font-size:20px;text-decoration:none;padding:12px 23px; color:#000000;background:#feb368;border-radius:14px;border:3px solid #354251;}</style><a class="iksweb" href="https://lrmap.fun/extraction" title="START PLAY">START PLAY</a>');
 
   this.messageWrap.show();
   this.messageWrap.appendChild(msg);
