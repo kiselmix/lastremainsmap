@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Jose Extraction</title>
+		<link type="image/x-icon" rel="shortcut icon" href="icons/favicon.ico">
+		<link rel="stylesheet" href="css/style-maze.css">
+		<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet" type='text/css'>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(96989374, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/96989374" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		
+	</head>
+	<body>
+	
+	
+			
+		<div><p id="countdown">Time left to fly</p><span id="timer">30</span>.<span id="timer2">99</span></div>
+		<script>
+			function tiktak() {
+				let timer=document.getElementById("timer");
+				let secs=timer.innerHTML;
+				--secs;
+				timer.innerHTML=secs;
+				if(secs==0) {
+					document.location.reload();
+				}
+			}
+			document.addEventListener('DOMContentLoaded', function(){
+
+			setInterval(tiktak,1000);
+			});
+			
+			
+			function tiktik() {
+				let timer2=document.getElementById("timer2");
+				let sec=timer2.innerHTML;
+				--sec;
+				if(sec==0) {
+					sec=99;
+				}
+				timer2.innerHTML=sec;
+			}
+			document.addEventListener('DOMContentLoaded', function(){
+
+			setInterval(tiktik,10);
+			});
+		</script>
+		
+		
+			
+		<script src="js/maze-game.js">
+		</script>
+		
+		
+		
+	</body>
+</html>
