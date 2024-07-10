@@ -133,7 +133,7 @@ GameManager.prototype.updateScore = function (data) {
     this.score += this.point;
     this.HTMLredraw.updateScore({ value: this.score });
 
-    if (this.score >= 100) {
+    if (this.score >= 10) {
       this.gameWin();
       return false;
     }
