@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=Comfortaa");
+body {
+  font-family: 'Rubik', sans-serif;
+  color: #ffffff;
+  background: #232323;
+  zoom: 200%;
+}
+
+.original {
+  width: 100%;
+  max-width: 550px;
+  display: block;
+  margin: 1rem auto;
+  text-align: center;
+}
