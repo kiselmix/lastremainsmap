@@ -307,7 +307,7 @@ var update = function(modifier) {
   if (Math.abs(avatar.x - goal.x) < 0.4 * cellSize &&
   Math.abs(avatar.y - goal.y) < 0.4 * cellSize) {
 	
-	document.write('<title>Jose Extraction</title><link type="image/x-icon" rel="shortcut icon" href="icons/favicon.ico"><style>.iksweb{display: inline-block;cursor: pointer; font-size:20px;text-decoration:none;padding:12px 23px; color:#000000;background:#feb368;border-radius:14px;border:3px solid #354251;} .body{margin: 0; padding: 0; background: #000000;color: #ffc060; font-size: 14px; line-height: 1.2em; text-align: center; font-weight: normal;}</style><body>We did it! It was already dark, and there was little time left to get out. I hear a helicopter, it seems somewhere nearby.</br></br><a class="iksweb" href="https://lrmap.fun/anticheat" title="START PLAY">START PLAY</a><img src = "img/cool-jose.png" style ="width:150px"></body>');
+	setTimeout(function(){window.location.href = "https://lrmap.fun/comic";}, 500);
 	pause;
 
   }
