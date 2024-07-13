@@ -91,7 +91,7 @@
       noWrap: true,  
       minZoom: 3,
       maxZoom: 5,
-    }).addTo(map);
+    });
 	
 	var map2 = L.tileLayer('map2/{z}/{x}/{y}.png', {
       continuousWorld: false,
@@ -99,6 +99,14 @@
       minZoom: 3,
       maxZoom: 5,
     });
+
+	var map3 = L.tileLayer('map3/{z}/{x}/{y}.png', {
+      continuousWorld: false,
+      noWrap: true,  
+      minZoom: 3,
+      maxZoom: 5,
+    }).addTo(map);
+	    
 	
 	var Crash = L.icon({
 		iconUrl:       'icons/Crash.png',
@@ -1169,6 +1177,7 @@
 	var baseMaps = {
 		"Map v1.0" : map2, 
 		"Map v2.0" : map1, 
+		"Map v3.0" : map3,
 	}
 
 	L.control.layers(baseMaps, overlays).addTo(map);
