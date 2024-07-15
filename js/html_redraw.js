@@ -45,8 +45,8 @@ HTMLredraw.prototype.gameOver = function() {
 };
 
 HTMLredraw.prototype.gameWin = function() {
-  var msg = this.getMessage('We did it! It was already dark, and there was little time left to get out. I hear a helicopter, it seems somewhere nearby.</br></br><style>.iksweb{display: inline-block;cursor: pointer; font-size:20px;text-decoration:none;padding:12px 23px; color:#000000;background:#feb368;border-radius:14px;border:3px solid #354251;}</style><a class="iksweb" href="https://lrmap.fun/extraction" title="START PLAY">START PLAY</a>');
-
+  var msg = this.getMessage('We did it! It was already dark, and there was little time left to get out. I hear a helicopter, it seems somewhere nearby.</br><style>.iksweb{display: inline-block;cursor: pointer; font-size:15px;text-decoration:none;padding:8px 14px; color:#000000;background:#feb368;border-radius:14px;border:3px solid #354251;}</style><a class="iksweb" href="https://twitter.com/intent/tweet?text=Mission%20Complete%21%20Jose%20has%20been%20found%20and%20asks%20for%20help%20to%20restore%20balance%20to%20%40PlayLastRemains%0A%0AFind%20Jose%20on%20the%20map%20and%20complete%20his%20tasks%3A%20%0ALRmap.fun" target="_blank">Share on X</a>    <a class="iksweb" href="https://lrmap.fun/extraction" target="_blank">Go to helicopter</a>');
+  
   this.messageWrap.show();
   this.messageWrap.appendChild(msg);
 };
